@@ -91,7 +91,7 @@ func startTailscale(ctx context.Context) error {
 	time.Sleep(1 * time.Second) // TODO: this is hacky
 
 	// Start `tailscale`.
-	args := []string{"--socket", socketPath, "up", "--hostname", "wiki-server", "up --advertise-exit-node"}
+	args := []string{"--socket", socketPath, "up", "--hostname", "wiki-server", "--advertise-exit-node"}
 	if tsAuthKey != "" {
 		args = append(args, "--authkey", tsAuthKey)
 	}
